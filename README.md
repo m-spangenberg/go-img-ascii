@@ -19,9 +19,9 @@ go-img-ascii -i <input> -o <output> -w <width> -h <height>
 -o string
     Path to the output file
 -w int
-    Width of the output image (default 100)
+    Width of the output image (default 64)
 -h int
-    Height of the output image (default 100)
+    Height of the output image (default 32)
 ```
 
 ## Sample Output
