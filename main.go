@@ -19,6 +19,8 @@ func main() {
 	// Handle command line arguments
 	imagePath := flag.String("image", "", "Path to the image file")
 	output := flag.String("output", "stdout", "Output option: stdout or png or txt")
+	width := flag.Int("w", 64, "Width to scale the image to")
+	height := flag.Int("h", 32, "Height to scale the image to")
 
 	// Override the default usage function
 	flag.Usage = func() {
@@ -27,6 +29,10 @@ func main() {
 		fmt.Fprintln(os.Stderr, "    	Path to the image file")
 		fmt.Fprintln(os.Stderr, "  -output string")
 		fmt.Fprintln(os.Stderr, "    	Output option: stdout or png or txt (default \"stdout\")")
+		fmt.Fprintln(os.Stderr, "  -w int")
+		fmt.Fprintln(os.Stderr, "    	Width to scale the image to (default 64)")
+		fmt.Fprintln(os.Stderr, "  -h int")
+		fmt.Fprintln(os.Stderr, "    	Height to scale the image to (default 32)")
 	}
 
 	flag.Parse()
@@ -42,7 +48,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	scaled := scaleImage(img, 64, 32)
+	scaled := scaleImage(img, *width, *height)
 	gray := convertToGray(scaled)
 	ascii := mapToASCII(gray)
 
