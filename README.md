@@ -1,7 +1,30 @@
 # go-img-ascii
 Convert an image to ascii.
 
-go run main.go --image test.png
+At the moment I'm diving into Go and building a small image-to-ascii converter as a toy project is my go-to for learning new languages. Output is limited to stdout, png, and txt file.
+
+## Installation
+
+```bash
+go get github.com/m-spangenberg/go-img-ascii
+```
+
+## Usage
+
+```bash
+go-img-ascii -i <input> -o <output> -w <width> -h <height>
+
+-i string
+    Path to the input image
+-o string
+    Path to the output file
+-w int
+    Width of the output image (default 100)
+-h int
+    Height of the output image (default 100)
+```
+
+## Sample Output
 
 ```
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
