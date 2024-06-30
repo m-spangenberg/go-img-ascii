@@ -17,17 +17,17 @@ import (
 
 func main() {
 	// Handle command line arguments
-	imagePath := flag.String("image", "", "Path to the image file")
-	output := flag.String("output", "stdout", "Output option: stdout or png or txt")
+	imagePath := flag.String("i", "", "Path to the image file")
+	output := flag.String("o", "stdout", "Output option: stdout or png or txt")
 	width := flag.Int("w", 64, "Width to scale the image to")
 	height := flag.Int("h", 32, "Height to scale the image to")
 
 	// Override the default usage function
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
-		fmt.Fprintln(os.Stderr, "  -image string")
+		fmt.Fprintln(os.Stderr, "  -i string")
 		fmt.Fprintln(os.Stderr, "    	Path to the image file")
-		fmt.Fprintln(os.Stderr, "  -output string")
+		fmt.Fprintln(os.Stderr, "  -o string")
 		fmt.Fprintln(os.Stderr, "    	Output option: stdout or png or txt (default \"stdout\")")
 		fmt.Fprintln(os.Stderr, "  -w int")
 		fmt.Fprintln(os.Stderr, "    	Width to scale the image to (default 64)")
