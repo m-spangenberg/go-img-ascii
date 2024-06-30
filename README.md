@@ -14,14 +14,14 @@ go get github.com/m-spangenberg/go-img-ascii
 ```bash
 go-img-ascii -i <input> -o <output> -w <width> -h <height>
 
--i string
-    Path to the input image
--o string
-    Path to the output file
+-input string
+    Path to input image
+-output string
+    Output option: stdout or png or txt (default stdout)
 -w int
-    Width of the output image (default 64)
+    Width of output image (default 64)
 -h int
-    Height of the output image (default 32)
+    Height of output image (default 32)
 ```
 
 ## Sample Output
