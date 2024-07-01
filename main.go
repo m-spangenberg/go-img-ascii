@@ -117,7 +117,7 @@ func mapToASCII(img *image.Gray) string {
 	for y := bounds.Min.Y; y < bounds.Max.Y; y++ {
 		for x := bounds.Min.X; x < bounds.Max.X; x++ {
 			c := img.GrayAt(x, y)
-			i := int(float64(c.Y) * 10 / 255)
+			i := int(float64(c.Y) * 9 / 255)
 			buf = append(buf, ascii[i])
 		}
 		buf = append(buf, '\n')
